@@ -1,3 +1,10 @@
+/*
+*Este código foi criado para um estudo com base em
+*criar alguns inputs de email, password e opção de sexo
+*onde os valores podem ser alterados real time
+*ao escrever ou escolher um option
+*/
+
 import React, {Component} from 'react';
 import Feed from './Components/Feed';
 
