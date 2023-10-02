@@ -1,3 +1,11 @@
+/*
+*Código para puxar um componente chamado Feed e passar todas
+*as props do constructor para o arquivo, para que seja 
+*configurado o retorno das informações dentro do mesmo
+*
+*import Feed from './Components/Feed';
+*/
+
 import React, {Component} from 'react';
 import Feed from './Components/Feed';
 
