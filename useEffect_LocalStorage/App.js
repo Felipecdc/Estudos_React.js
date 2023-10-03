@@ -4,7 +4,7 @@
 *com inputs e botao para execução da atividade
 */
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import './styles.css'
 
 function App(){
@@ -36,6 +36,10 @@ function App(){
     function add(){
         setTarefas([...tarefas, {nome: nome, idade: idade}])
     }
+
+    // Uso de useMemo para evitar loading e atrasos de renderizações
+    // em aplicações de grande porte
+    const totalTask = useMemo(() => tarefas.length, [tarefas])
 
     return(
         <div>
