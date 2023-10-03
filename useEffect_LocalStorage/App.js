@@ -2,9 +2,11 @@
 *Aplicão para aprendizado do uso de useEffect e LocalStorage 
 *em React.js, usando um sistema de array de objetos
 *com inputs e botao para execução da atividade
+*
+* useEffect, useMemo, useCallback... Atualização do codigo github.
 */
 
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import './styles.css'
 
 function App(){
@@ -33,9 +35,11 @@ function App(){
         localStorage.setItem('tarefas', JSON.stringify(tarefas))
     }, [tarefas])
 
-    function add(){
+    // useCallback para economizar o uso de processamento 
+    // chamando a const apenas quando um dos parametros sofrerem alteração
+    const add = useCallback(() => {
         setTarefas([...tarefas, {nome: nome, idade: idade}])
-    }
+    }, [nome, idade, tarefas])
 
     // Uso de useMemo para evitar loading e atrasos de renderizações
     // em aplicações de grande porte
