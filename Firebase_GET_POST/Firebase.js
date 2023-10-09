@@ -1,9 +1,10 @@
 /*
-* Importação e configuração do banco de dados do Firebase
+* Importação e configuração do banco de dados do Firebase + auth
 */
 
-import { initializeApp } from 'firebase/app'
-import { getFirestore } from 'firebase/firestore'
+import { initializeApp } from 'firebase/app'; // Inicia o app ligado ao firebase
+import { getFirestore } from 'firebase/firestore'; // Firestore
+import { getAuth } from 'firebase/auth'; // Auth
 
 const firebaseConfig = {
     apiKey: "AIzaSyAPNq4EFCX3-RwK9UIQGynjN0eV-YcvqJY",
@@ -17,5 +18,7 @@ const firebaseConfig = {
   
   const firebaseapp = initializeApp(firebaseConfig)
 
-  const db = getFirestore(firebaseapp)
-  export { db };
+  const db = getFirestore(firebaseapp) // Configura a inicialização do app com o firestore!
+  const auth = getAuth(firebaseapp) // Configura a inicialização do app com a autenticação de user!
+
+  export { db, auth }; // Exportação da config firestore e auth para uso externo!
